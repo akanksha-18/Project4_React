@@ -38,6 +38,13 @@ function App() {
     setGroceries(updatedGroceries);
   };
 
+  const clearCompleted = () => {
+    const updatedGroceries = groceries.filter(grocery => !grocery.completed);
+    setGroceries(updatedGroceries);
+  };
+
+  const hasCompletedTasks = groceries.some(grocery => grocery.completed);
+
   return (
     <div className="container">
       <h1>Grocery List</h1>
@@ -60,6 +67,9 @@ function App() {
           </li>
         ))}
       </ul>
+      {hasCompletedTasks && (
+        <button onClick={clearCompleted} className="clear-btn">Clear Completed</button>
+      )}
     </div>
   );
 }
