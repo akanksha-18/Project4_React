@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; // Import the CSS file for styling
 
+
 function initializeGroceries() {
   const savedGroceries = JSON.parse(localStorage.getItem('groceries'));
   return savedGroceries ? savedGroceries : [];

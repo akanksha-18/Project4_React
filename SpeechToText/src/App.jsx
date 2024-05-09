@@ -1,9 +1,10 @@
-// import "./App.css"
 
 import "./App.css"
+import 'regenerator-runtime/runtime';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import useClipboard from "react-use-clipboard";
 import {useState} from "react";
+import '@babel/polyfill';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
 
     if (!browserSupportsSpeechRecognition) {
         return null
-        console.log("Not supported")
+       
     }
 
     return (
